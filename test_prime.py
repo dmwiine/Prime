@@ -1,5 +1,4 @@
 import unittest
-import prime
 
 class TestPrime(unittest.TestCase):
 	
@@ -8,13 +7,13 @@ class TestPrime(unittest.TestCase):
 		self.assertEqual([2,3,5,7], result, msg="Incorrect output")
 
 	def test_prime_returns_error_if_arg_is_not_positive_integer(self):
-		self.assertRaises(ValueError, self.prime, -10)
+		self.assertRaises(TypeError, self.prime, -10)
 
 	def test_prime_returns_error_message_if_arg_is_string(self):
-		self.assertRaises(ValueError, self.prime, '10')
+		self.assertRaises(TypeError, self.prime, '10')
 
 	def test_prime_returns_error_message_if_arg_is_float(self):
-		self.assertRaises(ValueError, self.prime, 10.0)
+		self.assertRaises(TypeError, self.prime, 10.0)
 
 	def test_prime_returns_empty_list_when_arg_is_0():
 		self.assertEqual([], result, msg="Incorrect result")
