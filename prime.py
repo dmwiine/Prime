@@ -1,17 +1,20 @@
 def prime(n):
-	numbers = list(range(n+1))
-	if isinstance(n,int):
+	prime_numbers = []
+	if isinstance(n,int) and n > 0:
 		if n==0:
-			return []
-		if n == 2:
-			return [2]
-		for num in range(n+1):
-			if not n%2 == 0 and n > 2:
-				for i in range(3,int(math.sqrt(num)) + 1, 2):
-					if num%i == 0:
-						numbers.remove(num)
-		return numbers
+			print([])
+		else:
+			for num in range(0, n+1):
+				if num > 1:
+					for i in range(2,num):
+						if num%i == 0:
+							break
+							'''numd = numbers.remove(num)'''
+					else:
+						print(num)
 	else:
-		raise ValueError
+		raise TypeError('Argument must be positive integer')
 
-print (prime(10))
+prime(10)
+prime(-7)
+prime('10')
